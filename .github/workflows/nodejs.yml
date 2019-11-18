@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
@@ -24,3 +24,7 @@ jobs:
         npm test
       env:
         CI: true
+- name: Run linter
+  run: |
+    npm install eslint --save-dev
+    ./node_modules/.bin/eslint --no-eslintrc .
