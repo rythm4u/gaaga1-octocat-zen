@@ -19,3 +19,16 @@ describe('loading express', function () {
             .expect(404, done);
     });
 });
+
+var assert = require('assert');
+
+[...]
+
+describe('Array', function () {
+  describe('#indexOf()', function () {
+    it('should return -1 when the value is not present', function () {
+      // replace 4 with value that is present in the array
+      assert.equal([1, 2, 3].indexOf(4), -1);
+    });
+  });
+});
